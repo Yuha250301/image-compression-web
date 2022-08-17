@@ -40,7 +40,8 @@
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 100;
+    z-index: 101;
+    border-right: 2px dotted white;
 }
 .image-right {
     right:0;
