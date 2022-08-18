@@ -10,6 +10,8 @@
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
+  <script src="setupGlobal.js"></script>
+  <script src="getBackgroundSize.js"></script>
   </head>
   <body>
     <h1 style="color: blue; text-align: center">ZACommmMedia</h1>
@@ -22,23 +24,29 @@
             </div>
             <div class="file-name">
                 <select name="file-name" id="file">
-                    <option value="con-bao" selected>Con báo</option>
-                    <option value="dam-cuoi">Đám cưới</option>
+                    <!-- <option value="con-bao" selected>Con báo</option>
+                    <option value="dam-cuoi">Đám cưới</option> -->
                 </select>
             </div>
         </div>
         
         <div class="choose-type">
-            <div class="file-left-type">
-                <select name="type" id="left-type">
-                    <option value="jpg" selected>JPEG</option>
-                    <option value="jxl" >JPEG XL</option>
-                    <option value="original">Original</option>
-                </select>
-                <select name="quality" id="left-quality">
-                    <option value="Lossless" selected>Lossless</option>
-                    <option value="85" >85</option>
-                </select>
+            <div class="left">
+                <div class="file-left-type">
+                    <select name="type" id="left-type">
+                        <option value="jpg" selected>JPEG</option>
+                        <option value="jxl" >JPEG XL</option>
+                        <!-- <option value="original">Original</option> -->
+                    </select>
+                    <select name="quality" id="left-quality">
+                        <option value="ll" selected>Lossless</option>
+                        <option value="85" >85</option>
+                    </select>
+                </div>
+                <div class="infomation">
+                    <span id="left-byte">0</span>
+                    <span>KB</span>
+                </div>
             </div>
             <div class="size">
                 <select name="size" id="size">
@@ -49,29 +57,38 @@
                     <option value="3">3x</option>
                 </select>
             </div>
-            <div class="file-right-type">
-                <select name="type" id="right-type">
-                    <option value="jpg" selected>JPEG</option>
-                    <option value="jxl" >JPEG XL</option>
-                    <option value="original">Original</option>
-                </select>
-                <select name="quality" id="right-quality">
-                    <option value="Lossless" selected>Lossless</option>
-                    <option value="85" >85</option>
-                </select>
+            <div class="right">
+                <div class="file-right-type">
+                    <select name="type" id="right-type">
+                        <option value="jpg" selected>JPEG</option>
+                        <option value="jxl" >JPEG XL</option>
+                        <!-- <option value="original">Original</option> -->
+                    </select>
+                    <select name="quality" id="right-quality">
+                        <option value="ll" selected>Lossless</option>
+                        <option value="85" >85</option>
+                    </select>
+                </div>
+                <div class="infomation" style="text-align: right;">
+                    <span id="right-byte">0</span>
+                    <span>KB</span>
+                </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="image-left"></div>
+        <div class="container" id="container">
+            <div class="image-left" id="img-left"></div>
             <!-- <img src="/images/original/186721312389.jpg" class="image-left" alt=""> -->
             <!-- <img src="/images/original/186818037421.jpg" class="image-right" alt=""> -->
-            <div class="image-right"></div>
+            <div class="image-right" id="img-right"></div>
         </div>
     </div>
 
+    <div id="dim"></div>
 
+
+    <script src="changeContainSize.js"></script>
     <script src="split.js"></script>
-
+    <script src="changeTool.js"></script>
   </body>
 </html>

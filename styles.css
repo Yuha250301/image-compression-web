@@ -1,7 +1,12 @@
+body{
+    margin : 0;
+}
 .tools{
     background-color: deepskyblue;
     padding: 30px 50px;
     margin: 0;
+    min-height: 80vh ;
+    min-width: 100%;
 }
 
 .choose-image {
@@ -34,7 +39,7 @@
 .image-left {
     left:0;
 
-    background-image: url("/images/original/186721312389.jpg");
+    background-image: url("/images/ll/1.jpg");
     /* width: 100px; */
     /* height: auto;  */
     background-position: left;
@@ -45,7 +50,7 @@
 }
 .image-right {
     right:0;
-    background-image: url("/images/original/186721312389.jpg");
+    background-image: url("/images/ll/1.jpg");
     width: 0;
     /* height: auto;  */
     background-position: right;
