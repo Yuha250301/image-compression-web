@@ -1,12 +1,13 @@
 body{
     margin : 0;
+    min-width: 100%;
 }
 .tools{
     background-color: deepskyblue;
     padding: 30px 50px;
     margin: 0;
     min-height: 80vh ;
-    min-width: 100%;
+    min-width: 80%;
 }
 
 .choose-image {

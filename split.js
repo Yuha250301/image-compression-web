@@ -12,4 +12,7 @@ $(document).ready(function () {
     else
       $("#file").append("<option value='" + index + "'>" + index + "</option>");
   }
+
+  updateImageInfomation('#left-byte',"/images/ll/1.jpg");
+  updateImageInfomation('#right-byte',"/images/ll/1.jpg");
 });

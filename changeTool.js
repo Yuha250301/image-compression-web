@@ -18,8 +18,9 @@ $("#file").on("change", function () {
     /.*\./,
     this.value + "."
   );
-  newUrl = "url(" + srcArray.join("/") + ")";
-  $("#img-left").css("background-image", newUrl);
+  newUrl = srcArray.join("/");
+  $("#img-left").css("background-image", "url(" + newUrl + ")");
+  updateImageInfomation("#left-byte", newUrl);
 
   //change right image
   srcImg = $("#img-right")
@@ -30,8 +31,9 @@ $("#file").on("change", function () {
     /.*\./,
     this.value + "."
   );
-  newUrl = "url(" + srcArray.join("/") + ")";
-  $("#img-right").css("background-image", newUrl);
+  newUrl = srcArray.join("/");
+  $("#img-right").css("background-image", "url(" + newUrl + ")");
+  updateImageInfomation("#right-byte", newUrl);
 
   processWidthHeight($("#img-left"));
 });
@@ -49,8 +51,13 @@ function changeType(element, value) {
   );
   // alert(value);
 
-  newUrl = "url(" + srcArray.join("/") + ")";
-  $(element).css("background-image", newUrl);
+  newUrl =srcArray.join("/");
+  $(element).css("background-image", "url(" + newUrl + ")");
+  if (element === "#img-left") {
+    updateImageInfomation("#left-byte", newUrl);
+  } else {
+    updateImageInfomation("#right-byte", newUrl);
+  }
 }
 
 function changeQuality(element, value) {
@@ -61,9 +68,14 @@ function changeQuality(element, value) {
   srcArray = srcImg.split("/");
   srcArray[srcArray.length - 2] = value;
 
-  newUrl = "url(" + srcArray.join("/") + ")";
+  newUrl =  srcArray.join("/") ;
   // alert(newUrl);
-  $(element).css("background-image", newUrl);
+  $(element).css("background-image", "url(" + newUrl + ")");
+  if (element === "#img-left") {
+    updateImageInfomation("#left-byte", newUrl);
+  } else {
+    updateImageInfomation("#right-byte", newUrl);
+  }
 }
 
 $("#left-type").on("change", function () {
@@ -79,5 +91,3 @@ $("#left-quality").on("change", function () {
 $("#right-quality").on("change", function () {
   changeQuality("#img-right", this.value);
 });
-
-
