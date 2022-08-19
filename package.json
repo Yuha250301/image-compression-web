@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Yuha250301/image-compression-web/issues"
   },
-  "homepage": "https://github.com/Yuha250301/image-compression-web#readme"
+  "homepage": "https://github.com/Yuha250301/image-compression-web#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
