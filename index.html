@@ -14,35 +14,23 @@
   <script src="getBackgroundSize.js"></script>
   </head>
   <body>
-    <h1 style="color: blue; text-align: center">ZACommmMedia</h1>
+    <h1 style="color: #2155CD; text-align: center">ZACommmMedia</h1>
     <div class="tools" >
-        <div class="choose-image">
-            <div class="subset" style="margin-right: 2rem;">
-                <select name="subset" id="subset" style="font-size: 20px;">
-                    <option value="subset1" selected>subset1</option>
-                </select> 
-            </div>
-            <div class="file-name">
-                <select name="file-name" id="file" style="font-size: 20px;">
-                    <!-- <option value="con-bao" selected>Con báo</option>
-                    <option value="dam-cuoi">Đám cưới</option> -->
-                </select>
-            </div>
-        </div>
+        
         
         <div class="choose-type">
             <div class="left">
                 <div class="file-left-type">
                     <select name="type" id="left-type" style="font-size: 20px;">
-                        <option value="jpg" >Original</option>
-                        <option value="jpg" selected>JPEG</option>
+                        <option value="original" selected>Original</option>
+                        <option value="jpg" >JPEG</option>
                         <option value="jxl" >JPEG XL</option>
-                        <option value="jpg" >JPEG Converted</option>
+                        <option value="jpgc" >JPEG Converted</option>
                         <!-- <option value="original">Original</option> -->
                     </select>
                     <select name="quality" id="left-quality" style="font-size: 20px;">
                         <option value="ll" selected>Lossless</option>
-                        <option value="85" >85</option>
+                        <!-- <option value="85" >85</option> -->
                     </select>
                 </div>
                 <div class="infomation">
@@ -50,27 +38,43 @@
                     <span>KB</span>
                 </div>
             </div>
-            <div class="size">
-                <select name="size" id="size" style="font-size: 20px;">
-                    <option value="1/3">1/3</option>
-                    <option value="1/2">1/2</option>
-                    <option value="1" selected>--</option>
-                    <option value="2">2x</option>
-                    <option value="3">3x</option>
-                </select>
+           
+            <div class="choose-image">
+                <!-- <div class="subset" style="margin-right: 2rem;">
+                    <select name="subset" id="subset" style="font-size: 20px;">
+                        <option value="subset1" selected>subset1</option>
+                    </select> 
+                </div> -->
+                <div class="size" style="margin-right: 2rem;">
+                    <span style="font-size: 20px;">Size: </span>
+                    <select name="size" id="size" style="font-size: 20px;">
+                        <option value="1/3">1/3</option>
+                        <option value="1/2">1/2</option>
+                        <option value="1" selected>--</option>
+                        <option value="2">2x</option>
+                        <option value="3">3x</option>
+                    </select>
+                </div>
+                <div class="file-name">
+                    <span style="font-size: 20px;">Image: </span>
+                    <select name="file-name" id="file" style="font-size: 20px;">
+                        <!-- <option value="con-bao" selected>Con báo</option>
+                        <option value="dam-cuoi">Đám cưới</option> -->
+                    </select>
+                </div>
             </div>
             <div class="right">
                 <div class="file-right-type" >
                     <select name="type" id="right-type" style="font-size: 20px;">
-                        <option value="jpg" >Original</option>
-                        <option value="jpg" selected>JPEG</option>
+                        <option value="original" selected>Original</option>
+                        <option value="jpg" >JPEG</option>
                         <option value="jxl" >JPEG XL</option>
-                        <option value="jpg" >JPEG Converted</option>
+                        <option value="jpgc" >JPEG Converted</option>
                         <!-- <option value="original">Original</option> -->
                     </select>
                     <select name="quality" id="right-quality" style="font-size: 20px;">
                         <option value="ll" selected>Lossless</option>
-                        <option value="85" >85</option>
+                        <!-- <option value="85" >85</option> -->
                     </select>
                 </div>
                 <div class="infomation" style="text-align: right;">

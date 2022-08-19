@@ -3,6 +3,11 @@ $("#size").on("change", function () {
   $("#container")
     .width(globalContainer.width * eval(this.value))
     .height(globalContainer.height * eval(this.value));
+    if (eval(this.value) >= 1) {
+      $("body")
+        .width(globalBody.width * eval(this.value))
+        .height(globalBody.height * eval(this.value));
+    }
 });
 
 /* -----------------Change file---------------- */
@@ -15,8 +20,8 @@ $("#file").on("change", function () {
     .replace(/^url\(['"](.+)['"]\)/, "$1");
   srcArray = srcImg.split("/");
   srcArray[srcArray.length - 1] = srcArray[srcArray.length - 1].replace(
-    /.*\./,
-    this.value + "."
+    /.*/,
+    this.value
   );
   newUrl = srcArray.join("/");
   $("#img-left").css("background-image", "url(" + newUrl + ")");
@@ -28,8 +33,8 @@ $("#file").on("change", function () {
     .replace(/^url\(['"](.+)['"]\)/, "$1");
   srcArray = srcImg.split("/");
   srcArray[srcArray.length - 1] = srcArray[srcArray.length - 1].replace(
-    /.*\./,
-    this.value + "."
+    /.*/,
+    this.value
   );
   newUrl = srcArray.join("/");
   $("#img-right").css("background-image", "url(" + newUrl + ")");
@@ -79,10 +84,10 @@ function changeQuality(element, value) {
 }
 
 $("#left-type").on("change", function () {
-  changeType("#img-left", this.value);
+  changeQuality("#img-left", this.value);
 });
 $("#right-type").on("change", function () {
-  changeType("#img-right", this.value);
+  changeQuality("#img-right", this.value);
 });
 
 $("#left-quality").on("change", function () {

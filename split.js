@@ -13,6 +13,8 @@ $(document).ready(function () {
       $("#file").append("<option value='" + index + "'>" + index + "</option>");
   }
 
-  updateImageInfomation('#left-byte',"/images/ll/1.jpg");
-  updateImageInfomation('#right-byte',"/images/ll/1.jpg");
+  updateImageInfomation('#left-byte',"/images/original/1");
+  updateImageInfomation('#right-byte',"/images/original/1");
+
+  globalBody = {width: $('body').width(), height: $('body').height()};
 });
