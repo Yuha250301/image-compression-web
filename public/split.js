@@ -1,10 +1,12 @@
 $(document).ready(function () {
   $(".container").mousemove(function (e) {
     var w = e.pageX - $(this).offset().left;
+    console.log(w);
     $(this).find(".image-left").width(w);
     $(this)
       .find(".image-right")
       .width($(this).width() - w);
+    // $(this).find("#split-line").css({'left': w});
   });
 
   for (let index = 1; index <= numberImage; index++) {

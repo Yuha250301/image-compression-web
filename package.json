@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/Yuha250301/image-compression-web#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "image-compression": "file:../../../../zserver/ImageCompressionWeb"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
