@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".container").mousemove(function (e) {
     var w = e.pageX - $(this).offset().left;
-    console.log(w);
+    // console.log(w);
     $(this).find(".image-left").width(w);
     $(this)
       .find(".image-right")

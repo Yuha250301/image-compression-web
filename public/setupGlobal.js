@@ -19,3 +19,5 @@ async function updateImageInfomation(element, src) {
 
   $(element).text(size);
 }
+
+
