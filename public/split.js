@@ -1,11 +1,18 @@
+function setWidth(e, width) {
+  requestAnimationFrame(() => {
+    e.width(width);
+  });
+}
+
 $(document).ready(function () {
-  $(".container").mousemove(function (e) {
-    var w = e.pageX - $(this).offset().left;
+  let imageLeft = $("#img-left");
+  let imageRight = $("#img-right");
+
+  $(".container").mousemove(async function (e) {
+    let w = (await e.pageX) - Math.round($(this).offset().left);
     // console.log(w);
-    $(this).find(".image-left").width(w);
-    $(this)
-      .find(".image-right")
-      .width($(this).width() - w);
+    setWidth(imageLeft,w);
+    setWidth(imageRight, $(this).width() - w);
     // $(this).find("#split-line").css({'left': w});
   });
 
@@ -15,8 +22,8 @@ $(document).ready(function () {
       $("#file").append("<option value='" + index + "'>" + index + "</option>");
   }
 
-  updateImageInfomation('#left-byte',"/images/original/1");
-  updateImageInfomation('#right-byte',"/images/original/1");
+  updateImageInfomation("#left-byte", "/images/original/1");
+  updateImageInfomation("#right-byte", "/images/original/1");
 
-  globalBody = {width: $('body').width(), height: $('body').height()};
+  globalBody = { width: $("body").width(), height: $("body").height() };
 });

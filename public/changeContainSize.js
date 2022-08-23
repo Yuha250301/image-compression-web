@@ -25,9 +25,9 @@ function converSizeFit(width, height) {
 
 function converSizeFit2(width, height) {
   let widthPort, heightPort, widthBase, heightBase, widthContainer, heightContainer;
-  widthPort = ($(window).width() * 80) / 100;
+  widthPort = ($(window).width() * 60) / 100;
   console.log(widthPort);
-  heightPort = ($(window).height() * 80) / 100;
+  heightPort = ($(window).height() * 60) / 100;
   console.log(heightPort);
   console.log(width + ' ' + height);
   let index = 0;
@@ -50,9 +50,9 @@ async function processWidthHeight(element) {
   const container = converSizeFit2(width, height);
   // console.log(container);
   $("#container").width(container.width).height(container.height);
-  globalContainer = container;
+  globalContainer = await container;
   // $("#container").css("width", widthContainer);
   // $("#container").css("height", heightContainer);
 }
 
-processWidthHeight($("#img-left"));
+processWidthHeight($("#img-right"));

@@ -50,14 +50,13 @@ select {
 
 .image-left {
     left:0;
-
+    width: 100%;
     background-image: url("/images/original/1");
     /* height: auto;  */
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 101;
-    border-right: 2px dotted white;
+    z-index: 100;
 }
 .image-right {
     right:0;
@@ -67,5 +66,7 @@ select {
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 100;
+    z-index: 101;
+    border-left: 1px dotted white;
+
 }

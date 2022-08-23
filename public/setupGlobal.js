@@ -1,6 +1,7 @@
 let globalContainer;
 let globalBody;
 
+
 const numberImage = 7;
 
 window.onresize = function (event) {
