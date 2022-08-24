@@ -1,16 +1,21 @@
 #!/bin/sh
 
-SERVER="10.30.80.47"
-PRJ_NAME="ImageCompressionWeb"
+Port=3000
+PID_Usage_Port=`lsof -t -i:$Port`
 
-ENTRY_PATH=`readlink -f $0`
-PRJ_DIR=`dirname $ENTRY_PATH`
-
-echo "1"
-
-#sync
-rsync --delete -aurv --exclude 'node_modules' --exclude '.git' "$PRJ_DIR/" /zserver/$PRJ_NAME/
-
-echo "2"
-sh /zserver/$PRJ_NAME/runservice
-
+if [ -z "$PID_Usage_Port" ]
+then
+	echo "\$PID_Usage_Port is empty. You can use it now!"
+else
+	lsof -i:$Port
+	while true; do
+    		read -p "Do you wanna kill this process? " yn
+    		case $yn in
+        		[Yy]* ) echo "ok, we will proceed"; break;;
+        		[Nn]* ) echo "ok, exiting..."; exit;;
+        		* ) 	echo "Please answer yes or no.";;
+    		esac
+	done	
+	kill -9 $PID_Usage_Port
+	echo "Port is ready to use"
+fi
