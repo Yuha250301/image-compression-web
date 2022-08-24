@@ -1,17 +1,29 @@
+html{
+
+}
+
+
 body{
     margin : 0;
-    width: 100%;
-    background-color: #79DAE8;
-    overflow-x: hidden;
-}
-.tools{
     background-color: #E8F9FD;
-    color: #2155CD;
-    padding: 30px 50px;
-    margin: 0;
-    min-height: 100vh ;
-    min-width: 80%;
+    overflow: hidden;
 }
+
+.header{ 
+    color: #2155CD;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+    width: 100%;
+}
+
+.title {
+    background-color: #79DAE8;
+    padding: 20px 0;
+    width: 100%;
+}
+
 
 select {
     color: #2155CD;
@@ -25,14 +37,15 @@ select {
 .choose-type {
     display: flex;
     justify-content: space-around;
-    margin-top: 2rem;
+    padding: 50px;
+    background-color: #E8F9FD;
 }
 
 .container {
     position: relative;
     width: 1461px;
     height: 820px;
-    margin-top: 3rem;
+    margin-top: 221px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -71,4 +84,30 @@ select {
     z-index: 101;
     border-left: 1px dotted white;
     overflow:hidden;
+}
+
+.overlay-width{
+    position: fixed;
+    width: 10px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: #E8F9FD;
+}
+
+.overlay-left{
+    left: 0;
+}
+
+.overlay-right{
+    right: 0;
+}
+
+.overlay-height{
+    position: fixed;
+    width: 100%;
+    height: 10px;
+    z-index: 1000;
+    background-color: #E8F9FD;
+    bottom: 0;
 }

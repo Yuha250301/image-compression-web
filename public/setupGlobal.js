@@ -1,4 +1,4 @@
-let globalContainer;
+let globalContainer={width: 0, height:0};
 let globalBody;
 
 

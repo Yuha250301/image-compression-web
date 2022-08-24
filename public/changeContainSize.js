@@ -3,31 +3,11 @@ function uscln(a,b) {
   return uscln(b%a,a);
 }
 
-function converSizeFit(width, height) {
-  let widthPort, heightPort, widthContainer, heightContainer;
-  widthPort = ($(window).width() * 80) / 100;
-  console.log(widthPort);
-  heightPort = ($(window).height() * 80) / 100;
-  console.log(heightPort);
-  console.log(width + ' ' + height);
-
-  if (width > height) {
-    widthContainer = widthPort;
-    heightContainer = (widthContainer * height) / width;
-    console.log(widthContainer + ' ' + heightContainer);
-
-  } else {
-    heightContainer = heightPort;
-    widthContainer = (heightContainer * width) / height;
-  }
-  return { width: widthContainer, height: heightContainer };
-}
-
-function converSizeFit2(width, height) {
+function convertSizeFit2(width, height) {
   let widthPort, heightPort, widthBase, heightBase, widthContainer, heightContainer;
-  widthPort = ($(window).width() * 60) / 100;
+  widthPort = ($(window).width() * 70) / 100;
   console.log(widthPort);
-  heightPort = ($(window).height() * 60) / 100;
+  heightPort = ($(window).height() * 70) / 100;
   console.log(heightPort);
   console.log(width + ' ' + height);
   let index = 0;
@@ -47,12 +27,18 @@ function converSizeFit2(width, height) {
 
 async function processWidthHeight(element) {
   const { width, height } = await _getBackgroundSize(element);
-  const container = converSizeFit2(width, height);
+  const container = convertSizeFit2(width, height);
   // console.log(container);
   $("#container").width(container.width).height(container.height);
   globalContainer = await container;
+  processOverlay();
   // $("#container").css("width", widthContainer);
   // $("#container").css("height", heightContainer);
+}
+
+function processOverlay(){
+  $(".overlay-width").width(($(window).width() - globalContainer.width)/2);
+  $(".overlay-height").height($(window).height() - globalContainer.height - 221);
 }
 
 processWidthHeight($("#img-right"));
