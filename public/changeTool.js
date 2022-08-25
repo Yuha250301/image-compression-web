@@ -19,7 +19,7 @@ $("#size").on("change", function () {
 });
 
 function convertSizeFitTarget(width, height, size) {
-  let widthBase, heightBase, widthContainer, heightContainer;
+  let widthBase, heightBase, widthContainer = width, heightContainer = height;
   // widthPort = ($(window).width() * 70) / 100;
   // console.log(widthPort);
   // heightPort = ($(window).height() * 70) / 100;
@@ -35,8 +35,13 @@ function convertSizeFitTarget(width, height, size) {
     index++;
   }
   index--;
-  heightContainer = index * heightBase;
-  widthContainer = index * widthBase;
+  if (index > 0){
+    heightContainer = index * heightBase;
+    widthContainer = index * widthBase
+  } else {
+    alert("Can't downsize! It may affect the quality of the image... We will keep the image size.");
+    $("#size").val(1).change();
+  }
   return { width: widthContainer, height: heightContainer };
 }
 

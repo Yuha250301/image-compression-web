@@ -4,7 +4,7 @@ function uscln(a,b) {
 }
 
 function convertSizeFit2(width, height) {
-  let widthPort, heightPort, widthBase, heightBase, widthContainer, heightContainer;
+  let widthPort, heightPort, widthBase, heightBase, widthContainer = width, heightContainer = height;
   widthPort = ($(window).width() * 70) / 100;
   console.log(widthPort);
   heightPort = ($(window).height() * 70) / 100;
@@ -19,8 +19,10 @@ function convertSizeFit2(width, height) {
   }
   index--;
   console.log(index);
-  heightContainer = index * heightBase;
-  widthContainer = index * widthBase;
+  if (index > 0){
+    heightContainer = index * heightBase;
+    widthContainer = index * widthBase
+  }
   console.log(widthContainer + ' ' + heightContainer);
   return { width: widthContainer, height: heightContainer };
 }
